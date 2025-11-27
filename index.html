@@ -23,87 +23,128 @@
 
         .container {
             width: 100%;
-            max-width: 900px;
+            max-width: 800px;
             background: white;
             border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             overflow: hidden;
+            text-align: center;
         }
 
         .header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 30px;
-            text-align: center;
+            padding: 50px 30px;
         }
 
         .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
+            font-size: 3em;
+            margin-bottom: 15px;
             font-weight: 600;
         }
 
         .header p {
-            font-size: 1.1em;
-            opacity: 0.9;
+            font-size: 1.2em;
+            opacity: 0.95;
+            line-height: 1.6;
         }
 
-        .chat-container {
-            height: 600px;
-            width: 100%;
-            position: relative;
+        .content {
+            padding: 50px 30px;
         }
 
-        .chat-iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
+        .launch-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 50px;
+            font-size: 1.3em;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s ease;
+            margin: 20px 0;
         }
 
-        .footer {
-            background: #f8f9fa;
-            padding: 20px;
-            text-align: center;
-            color: #6c757d;
-            font-size: 0.9em;
+        .launch-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+        }
+
+        .launch-button:active {
+            transform: translateY(-1px);
         }
 
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            padding: 30px;
+            gap: 30px;
+            padding: 40px 30px;
             background: #f8f9fa;
         }
 
         .feature {
-            text-align: center;
             padding: 20px;
         }
 
         .feature-icon {
-            font-size: 2.5em;
-            margin-bottom: 10px;
+            font-size: 3em;
+            margin-bottom: 15px;
         }
 
         .feature h3 {
             color: #667eea;
-            margin-bottom: 8px;
-            font-size: 1.1em;
+            margin-bottom: 10px;
+            font-size: 1.2em;
         }
 
         .feature p {
             color: #6c757d;
-            font-size: 0.9em;
+            font-size: 1em;
+            line-height: 1.5;
+        }
+
+        .instructions {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin: 30px;
+            text-align: left;
+            border-radius: 5px;
+        }
+
+        .instructions h3 {
+            color: #856404;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .instructions ol {
+            margin-left: 20px;
+            color: #856404;
+        }
+
+        .instructions li {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+
+        .footer {
+            background: #f8f9fa;
+            padding: 25px;
+            color: #6c757d;
+            font-size: 0.95em;
         }
 
         @media (max-width: 768px) {
             .header h1 {
-                font-size: 1.8em;
+                font-size: 2em;
             }
             
-            .chat-container {
-                height: 500px;
+            .launch-button {
+                padding: 15px 35px;
+                font-size: 1.1em;
             }
         }
     </style>
@@ -112,43 +153,61 @@
     <div class="container">
         <div class="header">
             <h1>🎙️ Oriana Voice Assistant</h1>
-            <p>Your AI-powered product expert - Ask me anything about Oriana!</p>
+            <p>Your AI-powered product expert with voice interaction</p>
+            <p style="margin-top: 10px; font-size: 1em; opacity: 0.85;">Ask me anything about Oriana and our products!</p>
+        </div>
+
+        <div class="content">
+            <h2 style="color: #667eea; margin-bottom: 20px;">Ready to Chat?</h2>
+            <p style="color: #6c757d; margin-bottom: 30px; font-size: 1.1em;">
+                Click the button below to launch the voice assistant in a new window
+            </p>
+            
+            <a href="https://trainingoffice.app.n8n.cloud/webhook/9480fa85-fc2e-4481-8a3b-d71e5b1eb50c/chat" 
+               target="_blank" 
+               class="launch-button">
+                🚀 Launch Voice Assistant
+            </a>
+        </div>
+
+        <div class="instructions">
+            <h3>📋 How to Use:</h3>
+            <ol>
+                <li><strong>Click the launch button</strong> above to open the chat in a new window</li>
+                <li><strong>Grant microphone permissions</strong> when your browser asks</li>
+                <li><strong>Click the microphone icon</strong> in the chat to use voice input</li>
+                <li><strong>Speak your question</strong> naturally - the AI will respond with voice</li>
+                <li><strong>Type instead</strong> if you prefer - voice output will still work</li>
+            </ol>
         </div>
 
         <div class="features">
             <div class="feature">
                 <div class="feature-icon">🎤</div>
                 <h3>Voice Input</h3>
-                <p>Speak naturally to ask questions</p>
+                <p>Speak naturally to ask your questions</p>
             </div>
             <div class="feature">
                 <div class="feature-icon">🔊</div>
                 <h3>Voice Output</h3>
-                <p>Listen to spoken responses</p>
+                <p>Listen to AI-generated spoken responses</p>
             </div>
             <div class="feature">
                 <div class="feature-icon">📚</div>
                 <h3>Knowledge Base</h3>
-                <p>Powered by Google Drive data</p>
+                <p>Powered by your Google Drive documents</p>
             </div>
             <div class="feature">
                 <div class="feature-icon">💬</div>
-                <h3>Smart Responses</h3>
-                <p>Context-aware conversations</p>
+                <h3>Smart Conversations</h3>
+                <p>Context-aware with conversation memory</p>
             </div>
         </div>
 
-        <div class="chat-container">
-            <iframe 
-                class="chat-iframe"
-                src="https://trainingoffice.app.n8n.cloud/webhook/9480fa85-fc2e-4481-8a3b-d71e5b1eb50c/chat"
-                allow="microphone"
-            ></iframe>
-        </div>
-
         <div class="footer">
-            <p>💡 <strong>Tip:</strong> Click the microphone icon to use voice input. Grant microphone permissions when prompted.</p>
-            <p style="margin-top: 10px;">Powered by n8n AI Workflow</p>
+            <p><strong>💡 Pro Tip:</strong> For the best experience, use Chrome or Edge browser</p>
+            <p style="margin-top: 10px;">The assistant is trained exclusively on Oriana products and will politely decline off-topic questions</p>
+            <p style="margin-top: 15px; opacity: 0.7;">Powered by n8n AI Workflow</p>
         </div>
     </div>
 </body>
